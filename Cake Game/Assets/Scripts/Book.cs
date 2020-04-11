@@ -9,34 +9,58 @@ public class Book : MonoBehaviour
     GridLayout grid;
     public int maxCakes = 5;
 
-    string addcake = "2";
+    public bool enable;
 
     void Update()
     {
-
-        if (transform.childCount < maxCakes)
+        Debug.Log(PlayerPrefs.GetString("cakeToBake"));
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (Input.GetKeyDown(KeyCode.Q))
+            enable =! enable;
+        }
+
+        if (enable)
+        {
+            GetComponent<Image>().enabled = true;
+            for (int i = 0; i < GetComponentsInChildren<Image>().Length; i++)
             {
-                AddCake(addcake);
+                GetComponentsInChildren<Image>()[i].enabled = true;
             }
         }
-        else {
-            Debug.Log("Collection is full!");
+        else if(!enable) {
+
+            GetComponent<Image>().enabled = false;
+            for (int i = 0; i < GetComponentsInChildren<Image>().Length; i++)
+            {
+                GetComponentsInChildren<Image>()[i].enabled = false;
+            }
+
         }
 
     }
 
     public void AddCake(string id)
     {
+       
         var CakeToAdd = Resources.Load<GameObject>(id);
-        StartCoroutine(CakeSpawn(CakeToAdd));
-    }
+        if (transform.childCount < maxCakes)
+        {
+
+            StartCoroutine(CakeSpawn(CakeToAdd));
+
+        }
+        else
+        {
+            Debug.Log("Collection is full!");
+        }
+   }
 
     IEnumerator CakeSpawn(GameObject cakeToAdd)
     {
         Instantiate(cakeToAdd, transform.position, transform.rotation, this.transform);
+        PlayerPrefs.DeleteKey("cakeToBake");
         Debug.Log("Child Count:" + transform.childCount);
+        PlayerPrefs.DeleteKey("cakeToBake");
         yield return null;
     }
 
