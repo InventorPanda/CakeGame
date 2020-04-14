@@ -8,37 +8,40 @@ public class Pickup : MonoBehaviour
     public string cakeID;
     bool inRange;
 
-    void Update()
-    {
-        if (inRange)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                PlayerPrefs.SetString("cakeToBake", cakeID);
-                FindObjectOfType<Book>().AddCake(PlayerPrefs.GetString("cakeToBake"));
-            }
-        }
-    }
+    AudioSource audio;
 
+    void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+    
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.GetComponent<Player>() != null)
         {
             inRange = true;
+            StartCoroutine(Collect());
         }
     }
 
-    void OnTriggerStay2D(Collider2D col)
+    IEnumerator Collect()
     {
-        if (col.GetComponent<Player>() != null)
-        {
-            inRange = true;
-        }
-    }
 
-    void OnTriggerExit2D(Collider2D col)
-    {
+        PlayerPrefs.SetString("cakeToBake", cakeID);
+
+        FindObjectOfType<Book>().AddCake(PlayerPrefs.GetString("cakeToBake"));
+
+        audio.Play();
+
         inRange = false;
+
+        GetComponent<SpriteRenderer>().enabled = false;
+
+        yield return new WaitForSeconds(1);
+
+        Destroy(gameObject);
+
+        yield return null;
     }
 
 }
