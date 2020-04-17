@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class SignDialogue : MonoBehaviour
 {
     public GameObject dialogBox;
+    [TextArea]
     public string dialog;
     public Text dialogText;
     public bool playerInRange;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Playables;
 
 public class CraftingSystem : MonoBehaviour
 {
@@ -27,9 +28,23 @@ public class CraftingSystem : MonoBehaviour
 
     public bool cakePoision;
 
+    public PlayableDirector winPose;
+    public PlayableDirector losePose;
+
+    
+    public GameObject Buttons;
+
+    public GameObject blackPanel;
+    public Text blackPanelText;
+
     void Start()
     {
-        LoadSprites();
+        if (PlayerPrefs.GetInt("Day") == 1)
+        {
+            LoadSprites();
+        }
+      
+
     }
 
     void Update()
@@ -49,19 +64,38 @@ public class CraftingSystem : MonoBehaviour
     public void Finish()
     {
         StartCoroutine(CakeFinish());
+      
+        FindObjectOfType<Player>().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        FindObjectOfType<Player>().GetComponent<Transform>().localRotation = new Quaternion(0f,0f,0f,0f);
+        FindObjectOfType<Player>().GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+
+
     }
 
     IEnumerator CakeFinish()
     {
         var c = (int)Random.Range(0,6);
+        var a = (int)Random.Range(0, 5);
         var b = arrowID[0] + arrowID[1] + arrowID[2];
 
-        if (c == b)
+        /*  for (int i = 0; i < transform.childCount; i++)
+          {
+              GetComponentsInChildren<GameObject>()[i].SetActive(false);
+          }
+          */
+
+        Buttons.SetActive(false);
+
+
+
+        if (c == b || c == a)
         {
             cakePoision = true;
+            StartCoroutine(Lose());
         }
         else {
             cakePoision = false;
+            StartCoroutine(Win());
         }
 
         yield return null;
@@ -75,6 +109,65 @@ public class CraftingSystem : MonoBehaviour
         }
     }
 
+    IEnumerator Win()
+    {
+
+        winPose.enabled = true;
+
+        yield return new WaitForSeconds(11);
+
+        winPose.enabled = false;
+            
+        StartCoroutine(NewDay());
+
+        yield return null;
+    }
+
+    IEnumerator Lose()
+    {
+        losePose.enabled = true;
+
+        if (losePose.state == PlayState.Playing)
+        {
+            yield return null;
+        }
+        else {
+            losePose.enabled = false;
+            StartCoroutine(NewDay());
+        }
+
+        yield return null;
+    }
+
+    IEnumerator NewDay()
+    {
+        Time.timeScale = 0;
+
+        var x = PlayerPrefs.GetInt("Day") + 1;
+
+        PlayerPrefs.SetInt("Day", x);
+
+        blackPanelText.text = "Day " + PlayerPrefs.GetInt("Day");
+
+        foreach (Transform child in FindObjectOfType<Book>().transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+
+        blackPanel.SetActive(true);
+
+        yield return new WaitForSeconds(4);
+
+        Time.timeScale = 1;
+
+        Debug.Log(PlayerPrefs.GetInt("Day"));
+
+        blackPanel.SetActive(false);
+
+        LoadSpritesTwo();
+
+        yield return null;
+    }
 
     public void LeftArrow(int id)
     {
@@ -140,6 +233,61 @@ public class CraftingSystem : MonoBehaviour
 
     }
 
+    public void LoadSpritesTwo()
+    {
+        object[] topSprites2 = Resources.LoadAll<Sprite>("TopLayer2");
+        topLayer = new Sprite[topSprites2.Length];
+
+        object[] middleSprites2 = Resources.LoadAll<Sprite>("MiddleLayer2");
+        middleLayer = new Sprite[middleSprites2.Length];
+
+        object[] bottomSprites2 = Resources.LoadAll<Sprite>("BottomLayer2");
+        bottomLayer = new Sprite[bottomSprites2.Length];
+
+        object[] displayTopSprites2 = Resources.LoadAll<Sprite>("Cakes/Top2");
+        displayTopLayer = new Sprite[displayTopSprites2.Length];
+
+        object[] displayMiddleSprites2 = Resources.LoadAll<Sprite>("Cakes/Middle2");
+        displayMiddleLayer = new Sprite[displayMiddleSprites2.Length];
+
+        object[] displayBottomSprites2 = Resources.LoadAll<Sprite>("Cakes/Bottom2");
+        displayBottomLayer = new Sprite[displayBottomSprites2.Length];
+
+
+        for (int x = 0; x < topSprites2.Length; x++)
+        {
+            topLayer[x] = (Sprite)topSprites2[x];
+        }
+
+        for (int x = 0; x < middleSprites2.Length; x++)
+        {
+            middleLayer[x] = (Sprite)middleSprites2[x];
+        }
+
+        for (int x = 0; x < bottomSprites2.Length; x++)
+        {
+            bottomLayer[x] = (Sprite)bottomSprites2[x];
+        }
+
+        //----------------------------------------------//
+
+        for (int x = 0; x < displayTopSprites2.Length; x++)
+        {
+            displayTopLayer[x] = (Sprite)displayTopSprites2[x];
+        }
+
+        for (int x = 0; x < displayMiddleSprites2.Length; x++)
+        {
+            displayMiddleLayer[x] = (Sprite)displayMiddleSprites2[x];
+        }
+
+        for (int x = 0; x < displayBottomSprites2.Length; x++)
+        {
+            displayBottomLayer[x] = (Sprite)displayBottomSprites2[x];
+        }
+
+
+    }
 
 
 

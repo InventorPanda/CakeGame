@@ -59,12 +59,16 @@
      <Compile Include="Assets\Scripts\CameraPixelPerfect.cs" />
      <Compile Include="Assets\Scripts\Clock.cs" />
      <Compile Include="Assets\Scripts\CraftingSystem.cs" />
+     <Compile Include="Assets\Scripts\Cutscenes\AfterCakeCollection.cs" />
+     <Compile Include="Assets\Scripts\Cutscenes\OpeningCutscene.cs" />
+     <Compile Include="Assets\Scripts\Destroy.cs" />
      <Compile Include="Assets\Scripts\Movement.cs" />
      <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Pickup.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\SceneManager.cs" />
      <Compile Include="Assets\Scripts\SignDialogue.cs" />
+     <Compile Include="Assets\Scripts\Transition.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Users/Hi/Documents/Exodus/Codename Exodus/CakeGame/Cake Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

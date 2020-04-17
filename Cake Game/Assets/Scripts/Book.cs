@@ -11,17 +11,35 @@ public class Book : MonoBehaviour
 
     public bool enable;
 
+    Animator anim;
+
+    public Text text;
+
+   
+   // public AnimationClip openBookPage;
+    
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
+
     void Update()
     {
+        text.text = transform.childCount + "/" + maxCakes;
+
         Debug.Log(PlayerPrefs.GetString("cakeToBake"));
         if (Input.GetKeyDown(KeyCode.Q))
         {
             enable =! enable;
         }
 
-        if (enable)
+        anim.SetBool("openBook", enable);
+
+        if (enable && anim.GetCurrentAnimatorStateInfo(0).IsName("Open_Book_Page"))
         {
-            GetComponent<Image>().enabled = true;
+            
             for (int i = 0; i < GetComponentsInChildren<Image>().Length; i++)
             {
                 GetComponentsInChildren<Image>()[i].enabled = true;
@@ -29,7 +47,7 @@ public class Book : MonoBehaviour
         }
         else if(!enable) {
 
-            GetComponent<Image>().enabled = false;
+            
             for (int i = 0; i < GetComponentsInChildren<Image>().Length; i++)
             {
                 GetComponentsInChildren<Image>()[i].enabled = false;

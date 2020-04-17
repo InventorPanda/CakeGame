@@ -1,27 +1,47 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AfterCakeCollection
     - Book
     - CameraPixelPerfect
     - Clock
     - CraftingSystem
+    - Destroy
+    - OpeningCutscene
     - PauseMenu
     - Pickup
     - Player
+    - SceneManager
+    - SignDialogue
+    - Transition
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
     - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
+    Unity.Timeline.Editor.dll:
+    - UnityEditor.Timeline.AnimationPlayableAssetInspector
+    - UnityEditor.Timeline.SequenceHierarchy
+    - UnityEditor.Timeline.TimelineAssetViewModel
+    - UnityEditor.Timeline.TimelineWindow
+    Unity.Timeline.dll:
+    - UnityEngine.Timeline.ActivationPlayableAsset
+    - UnityEngine.Timeline.ActivationTrack
+    - UnityEngine.Timeline.AnimationPlayableAsset
+    - UnityEngine.Timeline.AnimationTrack
+    - UnityEngine.Timeline.GroupTrack
+    - UnityEngine.Timeline.MarkerTrack
+    - UnityEngine.Timeline.SignalReceiver
+    - UnityEngine.Timeline.TimelineAsset
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationBlendTree.Node
     - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
     - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -52,11 +72,21 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 58
       Script: {instanceID: 0}
+    - Class: 60
+      Script: {instanceID: 0}
     - Class: 61
+      Script: {instanceID: 0}
+    - Class: 62
+      Script: {instanceID: 0}
+    - Class: 65
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -65,35 +95,65 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11128}
+      Script: {instanceID: 570}
     - Class: 114
-      Script: {instanceID: 11160}
+      Script: {instanceID: 11132}
     - Class: 114
-      Script: {instanceID: 11298}
+      Script: {instanceID: 11164}
     - Class: 114
-      Script: {instanceID: 11338}
+      Script: {instanceID: 11288}
     - Class: 114
-      Script: {instanceID: 11392}
+      Script: {instanceID: 11306}
     - Class: 114
-      Script: {instanceID: 11522}
+      Script: {instanceID: 11324}
     - Class: 114
-      Script: {instanceID: 11750}
+      Script: {instanceID: 11366}
     - Class: 114
-      Script: {instanceID: 11802}
+      Script: {instanceID: 11430}
     - Class: 114
-      Script: {instanceID: 12072}
+      Script: {instanceID: 11504}
     - Class: 114
-      Script: {instanceID: 12140}
+      Script: {instanceID: 11580}
     - Class: 114
-      Script: {instanceID: 12166}
+      Script: {instanceID: 11586}
     - Class: 114
-      Script: {instanceID: 12464}
+      Script: {instanceID: 11696}
     - Class: 114
-      Script: {instanceID: 12514}
+      Script: {instanceID: 11848}
     - Class: 114
-      Script: {instanceID: 12642}
+      Script: {instanceID: 11902}
     - Class: 114
-      Script: {instanceID: 13016}
+      Script: {instanceID: 11930}
+    - Class: 114
+      Script: {instanceID: 11984}
+    - Class: 114
+      Script: {instanceID: 12134}
+    - Class: 114
+      Script: {instanceID: 12224}
+    - Class: 114
+      Script: {instanceID: 12308}
+    - Class: 114
+      Script: {instanceID: 12334}
+    - Class: 114
+      Script: {instanceID: 12540}
+    - Class: 114
+      Script: {instanceID: 12592}
+    - Class: 114
+      Script: {instanceID: 12660}
+    - Class: 114
+      Script: {instanceID: 12674}
+    - Class: 114
+      Script: {instanceID: 12728}
+    - Class: 114
+      Script: {instanceID: 12870}
+    - Class: 114
+      Script: {instanceID: 13020}
+    - Class: 114
+      Script: {instanceID: 13298}
+    - Class: 114
+      Script: {instanceID: 25810}
+    - Class: 114
+      Script: {instanceID: 39146}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -109,6 +169,79 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 320
+      Script: {instanceID: 0}
+    - Class: 19719996
+      Script: {instanceID: 0}
+    - Class: 156049354
+      Script: {instanceID: 0}
+    - Class: 483693784
+      Script: {instanceID: 0}
+    - Class: 1839735485
+      Script: {instanceID: 0}
+    Assets/Scenes/Start Menu.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: -584}
+    - Class: 114
+      Script: {instanceID: 570}
+    - Class: 114
+      Script: {instanceID: 11132}
+    - Class: 114
+      Script: {instanceID: 11324}
+    - Class: 114
+      Script: {instanceID: 11366}
+    - Class: 114
+      Script: {instanceID: 11430}
+    - Class: 114
+      Script: {instanceID: 11848}
+    - Class: 114
+      Script: {instanceID: 12134}
+    - Class: 114
+      Script: {instanceID: 12308}
+    - Class: 114
+      Script: {instanceID: 12870}
+    - Class: 114
+      Script: {instanceID: 13298}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 156049354
+      Script: {instanceID: 0}
+    - Class: 483693784
+      Script: {instanceID: 0}
+    - Class: 1839735485
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -129,6 +262,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PauseMenu
+  - hash:
+      serializedVersion: 2
+      Hash: f9820f716c2c89089b4542e7e5a4ce0a
+    assemblyName: SuperTiled2Unity.dll
+    namespaceName: SuperTiled2Unity
+    className: SuperLayer
   - hash:
       serializedVersion: 2
       Hash: 87ff43d2baf3385cba327d8f803a4ebb
@@ -221,6 +360,24 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
+      Hash: 0236f5d118101888a0a3ce8464b06d99
+    assemblyName: SuperTiled2Unity.dll
+    namespaceName: SuperTiled2Unity
+    className: SuperObjectLayer
+  - hash:
+      serializedVersion: 2
+      Hash: 6dbf496aa36e7af2b8aef4b901c0feff
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Destroy
+  - hash:
+      serializedVersion: 2
+      Hash: f9820f716c2c89089b4542e7e5a4ce0a
+    assemblyName: SuperTiled2Unity.dll
+    namespaceName: SuperTiled2Unity
+    className: SuperTileLayer
+  - hash:
+      serializedVersion: 2
       Hash: 0dbc3be398b4869a5c8d0d8481ee402c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -239,7 +396,7 @@ ScriptsOnlyBuild:
     className: AnimationTrack
   - hash:
       serializedVersion: 2
-      Hash: 85e5d1234a4cd67b9ed284bd21d86e90
+      Hash: 5426dca46081fa698958ec549840a6e3
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Book
@@ -299,6 +456,12 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
+      Hash: c2ab9a84f1678e33cf5ae0434e69450f
+    assemblyName: SuperTiled2Unity.dll
+    namespaceName: SuperTiled2Unity
+    className: SuperObject
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -317,10 +480,40 @@ ScriptsOnlyBuild:
     className: Clock
   - hash:
       serializedVersion: 2
+      Hash: 2708a9241d26c927675320b8547e8e70
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SignDialogue
+  - hash:
+      serializedVersion: 2
+      Hash: 37c2d6f2890fcfc20cd2ffeb02d7e28b
+    assemblyName: SuperTiled2Unity.dll
+    namespaceName: SuperTiled2Unity
+    className: SuperImageLayer
+  - hash:
+      serializedVersion: 2
+      Hash: ef3548c5d14fe31e2e237b3ab984f72b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Transition
+  - hash:
+      serializedVersion: 2
+      Hash: 46978845e7207c0143361709136085d3
+    assemblyName: SuperTiled2Unity.dll
+    namespaceName: SuperTiled2Unity
+    className: TileObjectAnimator
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Asset
+  - hash:
+      serializedVersion: 2
+      Hash: 2cc87dc29a773708b67b0a5221754b9d
+    assemblyName: SuperTiled2Unity.dll
+    namespaceName: SuperTiled2Unity
+    className: SuperTile
   - hash:
       serializedVersion: 2
       Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
@@ -329,10 +522,22 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: SuperTiled2Unity.dll
+    namespaceName: SuperTiled2Unity
+    className: SuperTilesAsObjectsTilemap
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
+  - hash:
+      serializedVersion: 2
+      Hash: d91fcd9ac7bd86d3d771dd6171620fad
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SceneManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -347,10 +552,16 @@ ScriptsOnlyBuild:
     className: RemoteTestResultSender
   - hash:
       serializedVersion: 2
-      Hash: 928e5051f5a5f46d5cebc496a5e1cb79
+      Hash: 10d3b23f2e20850fc61b712d8af0078f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CraftingSystem
+  - hash:
+      serializedVersion: 2
+      Hash: b46f6b2cbbaa491412478833d04ab4ad
+    assemblyName: SuperTiled2Unity.dll
+    namespaceName: SuperTiled2Unity
+    className: SuperColliderComponent
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
@@ -393,6 +604,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalReceiver
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Movement
   - hash:
       serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
@@ -473,6 +690,12 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
+      Hash: 0313238a3bcd1c5c48685cbe4af356a2
+    assemblyName: SuperTiled2Unity.dll
+    namespaceName: MegaDad
+    className: OverheadMegaDadController
+  - hash:
+      serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -491,10 +714,22 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
+      Hash: f9820f716c2c89089b4542e7e5a4ce0a
+    assemblyName: SuperTiled2Unity.dll
+    namespaceName: SuperTiled2Unity
+    className: SuperGroupLayer
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: PlayModeRunnerCallback
+  - hash:
+      serializedVersion: 2
+      Hash: 8709c67aec795882d13832011f6c250f
+    assemblyName: SuperTiled2Unity.dll
+    namespaceName: SuperTiled2Unity
+    className: SuperMap
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -507,6 +742,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Outline
+  - hash:
+      serializedVersion: 2
+      Hash: 98ec445b7fd50e50f0de1e41c2bbf826
+    assemblyName: SuperTiled2Unity.dll
+    namespaceName: SuperTiled2Unity
+    className: SuperCustomProperties
   - hash:
       serializedVersion: 2
       Hash: a63fc1a3b035e5a0b5839cd7f7b3086e
@@ -573,7 +814,20 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 196255b4b265a561652681f7626408fc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OpeningCutscene
+  - hash:
+      serializedVersion: 2
+      Hash: ef820736bf7a8f693b0f582ad626f2b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AfterCakeCollection
   platform: 19
   scenePathNames:
+  - Assets/Scenes/Start Menu.unity
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Hi/Documents/Cake Game.exe
+  playerPath: C:/Users/Hi/Videos/Cake Game.exe

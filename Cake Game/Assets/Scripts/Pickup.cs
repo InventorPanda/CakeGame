@@ -20,16 +20,15 @@ public class Pickup : MonoBehaviour
         if (col.GetComponent<Player>() != null)
         {
             inRange = true;
+            PlayerPrefs.SetString("cakeToBake", cakeID);
+            FindObjectOfType<Book>().AddCake(PlayerPrefs.GetString("cakeToBake"));
             StartCoroutine(Collect());
+
         }
     }
 
     IEnumerator Collect()
     {
-
-        PlayerPrefs.SetString("cakeToBake", cakeID);
-
-        FindObjectOfType<Book>().AddCake(PlayerPrefs.GetString("cakeToBake"));
 
         audio.Play();
 
